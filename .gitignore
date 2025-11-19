@@ -1,0 +1,42 @@
+# Ignore everything by default
+*
+
+# --- Allow essential project files & source code ---
+
+# Git / Config
+!/.gitignore
+!/.github/
+
+# Magento application code
+!/app/
+!/app/code/**
+!/app/design/**
+!/app/i18n/**
+!/app/etc/config.php
+
+# Root essentials
+!/auth.json
+!/composer.json
+!/composer.lock
+!/magento-vars.php
+!/php.ini
+!/README.md
+!/build_options.ini
+!/m2-hotfixes/**
+!/update/.htaccess
+!/update/
+!/.magento.app.yaml
+!/.magento.env.yaml*
+!/.magento/
+!/.magento/**
+
+# --- Ignore specific unwanted subpaths ---
+# Local environment overrides (never commit)
+/.magento/local
+
+# Allow folders but ignore all auto-generated content
+!/.magento/local/.gitkeep
+
+# --- Allow vendor metadata but not vendor files ---
+# (Recommended: do NOT commit vendor)
+/vendor/
