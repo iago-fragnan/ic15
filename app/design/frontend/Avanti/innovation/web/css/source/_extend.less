@@ -11,3 +11,22 @@
 .panel.wrapper {
     background-color: #005CFF !important;
 }
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .block-search {
+        float: left;
+        padding-left: 15px;
+        position: relative;
+        width: 594px;
+        z-index: 4;
+
+        input {
+            .lib-input-placeholder(@form-element-input-placeholder__color);
+            //margin: 0;
+            //padding-right: 35px;
+            //position: static;
+            justify-content: center;
+            border-radius: 20px;
+        }
+    }
+}

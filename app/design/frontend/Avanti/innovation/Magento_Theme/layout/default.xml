@@ -9,14 +9,19 @@
         </referenceContainer>
 
         <referenceBlock name="header.links" remove="true" />
+<!--        <move element="header.links" destination="top.search" after="-" />-->
+
 
         <referenceBlock name="logo">
             <arguments>
                 <argument name="logo_file" xsi:type="string">images/logo.svg</argument>
-                <argument name="logo_width" xsi:type="number">300</argument>
-                <argument name="logo_height" xsi:type="number">300</argument>
+                <argument name="logo_width" xsi:type="number">153</argument>
+                <argument name="logo_height" xsi:type="number">28</argument>
                 <argument name="logo_alt" xsi:type="string">IC 15</argument>
             </arguments>
         </referenceBlock>
+
+
+
     </body>
 </page>
