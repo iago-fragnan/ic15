@@ -26,7 +26,7 @@
         width: 594px;
         height: 40px;
         z-index: 4;
-        margin: -1rem 3rem -4rem;
+        margin: -4.5rem 2rem;
 
         input {
             .lib-input-placeholder(@form-element-input-placeholder__color);
@@ -85,6 +85,7 @@
             font-size: 0 !important;
         }
 
+        color: #000000;
         background-image: url('../images/icon-search.svg') !important;
         background-repeat: no-repeat !important;
         background-position: center !important;
@@ -107,4 +108,37 @@
     background-repeat: no-repeat !important;
     background-position: right 10px center !important;
     background-size: 18px 18px !important;
+    color: #000000;
+}
+
+
+.page-header {
+    height: 100px;
+    padding-bottom: 15px;
+    align-items: center;
+    justify-content: center;
+    transition: height 0.2s ease;
+}
+
+
+.userarea-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 20px;
+
+    width: auto;
+    float: none;
+
+    .account-management {
+        order: 1;
+        display: flex;
+        flex-direction: row;
+        gap: 0.5rem;
+        margin: 0 0 1rem;
+    }
+
+    .minicart-wrapper {
+        order: 2;
+    }
 }

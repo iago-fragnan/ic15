@@ -1,17 +1,20 @@
+<?xml version="1.0"?>
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
 
     <body>
+
+        <!-- Promotion bar -->
         <referenceContainer name="header.panel">
             <container name="promo.header.wrapper" htmlClass="promo-wrapper" htmlTag="div">
-                <block class="Magento\Framework\View\Element\Template" name="promo.header.panel" template="Magento_Theme::html/promo.phtml" before="-"/>
+                <block class="Magento\Framework\View\Element\Template"
+                       name="promo.header.panel"
+                       template="Magento_Theme::html/promo.phtml"
+                       before="-"/>
             </container>
         </referenceContainer>
 
-        <referenceBlock name="header.links" remove="true" />
-<!--        <move element="header.links" destination="top.search" after="-" />-->
-
-
+        <!-- Logo -->
         <referenceBlock name="logo">
             <arguments>
                 <argument name="logo_file" xsi:type="string">images/logo.svg</argument>
@@ -21,7 +24,24 @@
             </arguments>
         </referenceBlock>
 
+        <referenceBlock name="header.links" remove="true" />
 
+        <referenceContainer name="header-wrapper">
+            <container name="header.userarea.wrapper"
+                       as="userarea"
+                       htmlTag="div"
+                       htmlClass="userarea-wrapper"
+                       after="logo"/>
+        </referenceContainer>
+
+        <referenceContainer name="header.userarea.wrapper">
+            <block class="Magento\Framework\View\Element\Template"
+                   name="header.account.block"
+                   template="Magento_Theme::html/account.phtml"
+                   before="-"/>
+        </referenceContainer>
+
+        <move element="minicart" destination="header.userarea.wrapper" after="header.account.block"/>
 
     </body>
 </page>
