@@ -13,6 +13,7 @@
                        before="-"/>
             </container>
         </referenceContainer>
+        <!-- ==================================== -->
 
         <!-- Logo -->
         <referenceBlock name="logo">
@@ -23,25 +24,23 @@
                 <argument name="logo_alt" xsi:type="string">IC 15</argument>
             </arguments>
         </referenceBlock>
+        <!-- ==================================== -->
 
+        <!-- Header User Area + Shopping Cart Icons -->
         <referenceBlock name="header.links" remove="true" />
 
         <referenceContainer name="header-wrapper">
-            <container name="header.userarea.wrapper"
-                       as="userarea"
-                       htmlTag="div"
-                       htmlClass="userarea-wrapper"
-                       after="logo"/>
+            <container name="header.userarea.wrapper" as="userarea" htmlTag="div" htmlClass="userarea-wrapper" after="logo"/>
         </referenceContainer>
 
         <referenceContainer name="header.userarea.wrapper">
-            <block class="Magento\Framework\View\Element\Template"
-                   name="header.account.block"
-                   template="Magento_Theme::html/account.phtml"
-                   before="-"/>
+            <block class="Magento\Framework\View\Element\Template" name="header.account.block" template="Magento_Theme::html/account.phtml" before="-"/>
         </referenceContainer>
 
         <move element="minicart" destination="header.userarea.wrapper" after="header.account.block"/>
+
+        <!-- ==================================== -->
+
 
     </body>
 </page>
