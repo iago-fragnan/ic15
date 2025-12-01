@@ -21,11 +21,11 @@ $customer = $session->getCustomer();
             <?= __('Sair') ?>
         </a>
     <?php else: ?>
-        <a href="<?= $block->getUrl('customer/account/login') ?>">
+        <a class="login-text" href="<?= $block->getUrl('customer/account/login') ?>">
             <?= __('Entrar') ?>
         </a>
         <?= __('ou') ?>
-        <a href="<?= $block->getUrl('customer/account/create') ?>">
+        <a class="register-text" href="<?= $block->getUrl('customer/account/create') ?>">
             <?= __('Registrar') ?>
         </a>
     <?php endif; ?>
