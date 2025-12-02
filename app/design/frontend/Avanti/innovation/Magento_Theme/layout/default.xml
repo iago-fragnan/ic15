@@ -4,7 +4,7 @@
 
     <body>
 
-        <!-- Promotion bar -->
+        <!-- Promotion Bar -->
         <referenceContainer name="header.panel">
             <container name="promo.header.wrapper" htmlClass="promo-wrapper" htmlTag="div">
                 <block class="Magento\Framework\View\Element\Template"
@@ -13,7 +13,6 @@
                        before="-"/>
             </container>
         </referenceContainer>
-        <!-- ==================================== -->
 
         <!-- Logo -->
         <referenceBlock name="logo">
@@ -24,9 +23,8 @@
                 <argument name="logo_alt" xsi:type="string">IC 15</argument>
             </arguments>
         </referenceBlock>
-        <!-- ==================================== -->
 
-        <!-- Header User Area + Shopping Cart Icons -->
+        <!-- Header User Account + Shopping Cart Icons -->
         <referenceBlock name="header.links" remove="true" />
 
         <referenceContainer name="header-wrapper">
@@ -39,7 +37,7 @@
 
         <move element="minicart" destination="header.userarea.wrapper" after="header.account.block"/>
 
-        <!-- ==================================== -->
+
 
 
     </body>
