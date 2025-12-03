@@ -37,6 +37,21 @@
 
         <move element="minicart" destination="header.userarea.wrapper" after="header.account.block"/>
 
+        <!-- Footer-->
+
+        <!-- Remove Newsletter and default info -->
+        <referenceContainer name="form.subscribe" remove="true" />
+        <referenceBlock name="footer_links" remove="true"/>
+        <referenceBlock name="copyright" remove="true"/>
+
+
+        <referenceContainer name="footer">
+            <block class="Magento\Cms\Block\Block" name="footer_row_1">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">footer_row_1</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
 
 
 
