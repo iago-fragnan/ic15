@@ -1,4 +1,69 @@
-.socials-logo-wrapper{
+.footer-brand{
+    margin-top: 40px;
+}
+.socials-logo-wrapper {
     display: flex;
     gap: 10px;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.payment-methods-wrapper{
+    flex-direction: row !important;
+    margin: 40px 0 40px 0 !important;
+}
+
+
+//  ACCORDION
+
+.accordion-title {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.footer-accordion h5 {
+    margin: 0;
+    padding: 10px 0;
+}
+
+@media (max-width: 767px) {
+
+    .footer-accordion {
+        width: 100%;
+        overflow: hidden;
+        border-bottom: 1px solid #ddd;
+        padding: 10px 0;
+    }
+
+    .footer-accordion h5 {
+        cursor: pointer;
+        position: relative;
+        padding-right: 25px;
+        font-size: 16px;
+        font-weight: 700;
+        margin: 0;
+    }
+
+    .footer-accordion h5::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%) rotate(0deg);
+        width: 16px;
+        height: 16px;
+        background-image: url('../images/icon-arrow.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        transition: transform 0.3s ease;
+    }
+
+    .footer-accordion.is-open h5::after {
+        transform: translateY(-50%) rotate(180deg);
+    }
+
+    .footer-accordion ul {
+        margin-top: 8px;
+        padding-left: 15px;
+    }
 }
