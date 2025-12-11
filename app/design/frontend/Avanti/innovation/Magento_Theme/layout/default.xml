@@ -4,8 +4,19 @@
 
     <body>
 
-        <!-- Remove the Skip Content Button Bar -->
+        <!-- Remove the Skip content button bar -->
         <referenceBlock name="skip_to_content" remove="true"/>
+
+        <!-- Remove the Compare Products functionality -->
+        <referenceBlock name="catalog.compare.link" remove="true"/>
+        <referenceBlock name="catalog.compare.sidebar" remove="true"/>
+        <referenceBlock name="category.product.addto.compare" remove="true"/>
+        <referenceBlock name="catalogsearch.product.addto.compare" remove="true"/>
+        <referenceBlock name="crosssell.product.addto.compare" remove="true"/>
+        <referenceBlock name="related.product.addto.compare" remove="true"/>
+        <referenceBlock name="upsell.product.addto.compare" remove="true"/>
+        <referenceBlock name="view.addto.compare" remove="true"/>
+
 
         <!-- Promotion Bar -->
         <referenceContainer name="header.panel">
@@ -42,12 +53,13 @@
 
         <!-- Footer-->
 
-        <!-- Remove Newsletter and default info -->
+        <!-- Remove newsletter and default info -->
         <referenceContainer name="form.subscribe" remove="true" />
         <referenceBlock name="footer_links" remove="true"/>
         <referenceBlock name="copyright" remove="true"/>
 
 
+        <!--  Add custom footer block -->
         <referenceContainer name="footer">
             <block class="Magento\Cms\Block\Block" name="footer_row_1">
                 <arguments>
