@@ -1,101 +1,58 @@
-.footer-brand {
-    margin-top: 85px;
-}
-
 .socials-logo-wrapper {
     display: flex;
-    gap: 40px;
-    justify-content: center;
-    margin-top: 40px;
-}
-
-.payment-methods-wrapper {
-    flex-direction: row !important;
-    margin: 40px 0 !important;
     gap: 10px;
+    justify-content: center;
 }
 
-.footer-text-info{
-    padding: 40px 183px 40px 183px;
+.accordion-title {
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
-.page-footer .footer.content {
-    padding: 0 !important;
-    margin: 0 !important;
-    max-width: 100% !important;
+.footer-accordion h5 {
+    margin: 0;
+    padding: 10px 0;
 }
 
-.page-footer .pagebuilder-row {
-    background: transparent !important;
-}
-
-.page-footer .pagebuilder-row,
-.page-footer .pagebuilder-column-group,
-.page-footer .pagebuilder-column {
-    margin: 0 !important;
-    padding: 0 !important;
-}
-.page-wrapper .page-footer {
-    width: 100% !important;
-    max-width: 100% !important;
-    padding: 0 !important;
-    margin: 0 !important;
-}
-
-
-/* ACCORDION */
-
-.footer-nav-links {
-    margin-top: 64px;
-    margin-bottom: 64px;
-}
-
-
-
-.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+@media (max-width: 767px) {
 
     .footer-accordion {
         width: 100%;
         overflow: hidden;
-        border-bottom: 1px solid @color-gray80;
+        border-bottom: 1px solid #ddd;
         padding: 10px 0;
     }
 
     .footer-accordion h5 {
+        cursor: pointer;
         position: relative;
+        padding-right: 25px;
+        margin: 0;
         font-size: 16px;
         font-weight: 700;
     }
 
-    .footer-text-info{
-        padding: 0 40px 40px 40px;
-    }
-
     .footer-accordion h5::after {
-        content: '';
+        content: '+';
         position: absolute;
         right: 0;
         top: 50%;
-        .lib-css(transform, translateY(-50%) rotate(0deg));
-        width: 16px;
-        height: 16px;
-        background-image: url('../images/icon-arrow.svg');
-        background-size: contain;
-        background-repeat: no-repeat;
+        transform: translateY(-50%);
+        font-weight: bold;
         transition: transform 0.3s ease;
     }
 
     .footer-accordion.is-open h5::after {
-        .lib-css(transform, translateY(-50%) rotate(180deg));
-    }
-
-    .footer-nav-links {
-        margin: 10px 16px 10px 16px;
+        content: '-';
     }
 
     .footer-accordion ul {
+        display: none;
         margin-top: 8px;
         padding-left: 15px;
     }
 
+    .footer-accordion.is-open ul {
+        display: block;
+    }
 }

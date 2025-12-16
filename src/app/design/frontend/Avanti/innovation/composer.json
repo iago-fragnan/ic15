@@ -1,0 +1,11 @@
+{
+    "name": "avanti/innovation",
+    "description": "Avanti Innovation 15",
+    "type": "magento2-theme",
+    "version": "1.0.0",
+    "autoload": {
+        "files": [
+            "registration.php"
+        ]
+    }
+}

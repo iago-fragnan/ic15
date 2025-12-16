@@ -1,25 +1,89 @@
-*
-!/.gitignore
-!/.magento.app.yaml
-!/.magento.env.yaml*
-!/.magento
-!/.magento/**
-/.magento/local
-!/app
-!/app/*/
-!/app/code/**
-!/app/design/**
-!/app/etc/config.php
-!/app/i18n/**
-!/auth.json
-!/build_options.ini
-!/composer.json
-!/composer.lock
-!/magento-vars.php
-!/m2-hotfixes
-!/m2-hotfixes/**
-!/php.ini
-!/update
-!/update/.htaccess
-!/README.md
-!/.github
+############################
+# OS / Editor junk
+############################
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.idea/
+.vscode/
+
+############################
+# Environment / secrets
+############################
+.env
+.env.*
+/env/*.env
+auth.json
+src/auth.json
+
+############################
+# Magento generated files
+############################
+/generated/*
+!/generated/.htaccess
+
+/var/*
+!/var/.htaccess
+
+/pub/static/*
+!/pub/static/.htaccess
+
+/pub/media/*
+!/pub/media/.htaccess
+
+############################
+# Cache / logs
+############################
+/var/cache/
+/var/page_cache/
+/var/log/
+/var/session/
+/var/view_preprocessed/
+
+############################
+# Composer
+############################
+/vendor/
+/composer.lock
+
+# If you want to version lock file, comment the line above
+
+############################
+# Node / frontend tooling
+############################
+/node_modules/
+/src/node_modules/
+/npm-debug.log*
+/yarn-error.log*
+
+############################
+# Grunt / frontend builds
+############################
+/src/pub/static/*
+!/src/pub/static/.htaccess
+
+/src/var/*
+!/src/var/.htaccess
+
+############################
+# Magento backups / dumps
+############################
+*.sql
+*.sql.gz
+*.tgz
+*.zip
+nBackup.sh
+
+############################
+# Certificates / local SSL
+############################
+rootCA.pem
+*.pem
+*.crt
+*.key
+
+############################
+# Docker runtime data
+############################
+docker-data/

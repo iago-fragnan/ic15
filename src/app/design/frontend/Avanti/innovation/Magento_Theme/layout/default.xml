@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+
+    <body>
+
+        <!-- Remove the Skip content button bar -->
+        <referenceBlock name="skip_to_content" remove="true"/>
+
+        <!-- Remove the Compare Products functionality -->
+        <referenceBlock name="catalog.compare.link" remove="true"/>
+        <referenceBlock name="catalog.compare.sidebar" remove="true"/>
+        <referenceBlock name="category.product.addto.compare" remove="true"/>
+        <referenceBlock name="catalogsearch.product.addto.compare" remove="true"/>
+        <referenceBlock name="crosssell.product.addto.compare" remove="true"/>
+        <referenceBlock name="related.product.addto.compare" remove="true"/>
+        <referenceBlock name="upsell.product.addto.compare" remove="true"/>
+        <referenceBlock name="view.addto.compare" remove="true"/>
+
+
+        <!-- Promotion Bar -->
+        <referenceContainer name="header.panel">
+            <container name="promo.header.wrapper" htmlClass="promo-wrapper" htmlTag="div">
+                <block class="Magento\Framework\View\Element\Template"
+                       name="promo.header.panel"
+                       template="Magento_Theme::html/promo.phtml"
+                       before="-"/>
+            </container>
+        </referenceContainer>
+
+        <!-- Logo -->
+        <referenceBlock name="logo">
+            <arguments>
+                <argument name="logo_file" xsi:type="string">images/logo.svg</argument>
+                <argument name="logo_width" xsi:type="number">153</argument>
+                <argument name="logo_height" xsi:type="number">28</argument>
+                <argument name="logo_alt" xsi:type="string">IC 15</argument>
+            </arguments>
+        </referenceBlock>
+
+        <!-- Header User Account + Shopping Cart Icons -->
+        <referenceBlock name="header.links" remove="true" />
+
+        <referenceContainer name="header-wrapper">
+            <container name="header.userarea.wrapper" as="userarea" htmlTag="div" htmlClass="userarea-wrapper" after="logo"/>
+        </referenceContainer>
+
+        <referenceContainer name="header.userarea.wrapper">
+            <block class="Magento\Framework\View\Element\Template" name="header.account.block" template="Magento_Theme::html/account.phtml" before="-"/>
+        </referenceContainer>
+
+        <move element="minicart" destination="header.userarea.wrapper" after="header.account.block"/>
+
+        <!-- Footer-->
+
+        <!-- Remove newsletter and default info -->
+        <referenceContainer name="form.subscribe" remove="true" />
+        <referenceBlock name="footer_links" remove="true"/>
+        <referenceBlock name="copyright" remove="true"/>
+
+
+        <!--  Add custom footer block -->
+        <referenceContainer name="footer">
+            <block class="Magento\Cms\Block\Block" name="footer_row_1">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">footer_row_1</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+
+
+
+    </body>
+</page>

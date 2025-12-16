@@ -1,0 +1,32 @@
+<?php
+/** @var \Magento\Framework\View\Element\Template $block */
+/** @var \Magento\Framework\Escaper $escaper */
+
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$session = $objectManager->get(\Magento\Customer\Model\Session::class);
+$httpContext = $objectManager->get(\Magento\Framework\App\Http\Context::class);
+$isLoggedIn = $httpContext->getValue(\Magento\Customer\Model\Context::CONTEXT_AUTH);
+$customer = $session->getCustomer();
+?>
+
+<div class="account-management">
+    <img src="<?= $block->getViewFileUrl('images/icon-person.svg') ?>"
+         alt="<?= __('Profile') ?>">
+
+    <?php if ($isLoggedIn): ?>
+        <a href="<?= $block->getUrl('customer/account') ?>">
+            <?= __('Bem-vindo, '. $customer->getFirstname() . '!'); ?>
+        </a>
+        <a href="<?= $block->getUrl('customer/account/logout') ?>">
+            <?= __('Sair') ?>
+        </a>
+    <?php else: ?>
+        <a class="login-text" href="<?= $block->getUrl('customer/account/login') ?>">
+            <?= __('Entrar') ?>
+        </a>
+        <span style="font-weight: normal"><?= __('ou') ?></span>
+        <a class="register-text" href="<?= $block->getUrl('customer/account/create') ?>">
+            <?= __('Registrar') ?>
+        </a>
+    <?php endif; ?>
+</div>
