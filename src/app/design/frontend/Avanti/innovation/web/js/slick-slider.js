@@ -5,10 +5,12 @@ define([
     'use strict';
 
     function initSlider() {
-        $('.pagebuilder-slider')
-            .find('.pagebuilder-column-line')
-            .not('.slick-initialized')
-            .slick({
+        $('.slider-row .pagebuilder-column-line').each(function () {
+            var $slider = $(this);
+            if ($slider.hasClass('slick-initialized')) return;
+            if ($slider.children('.slider-col').length < 2) return;
+
+            $slider.slick({
                 slidesToShow: 6,
                 slidesToScroll: 1,
                 arrows: true,
@@ -24,12 +26,13 @@ define([
                     }
                 ]
             });
-        console.log("Slider foi adicionado");
 
+            console.log('Slick foi integraod');
+        });
     }
 
     $(document).ready(function () {
-        console.log("Slick Slider inicializado");
+        console.log('Slick inicializado');
         initSlider();
     });
 
