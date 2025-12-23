@@ -1,10 +1,5 @@
-/* ===========================
-   NEWSLETTER OVERRIDE
-   =========================== */
-
 & when (@media-common = true) {
     .block.newsletter {
-        /* remove table layout */
         .form.subscribe {
             display: flex !important;
             width: 100%;
@@ -16,13 +11,10 @@
             width: auto !important;
         }
 
-        /* remove magento icon */
         .control::before {
             display: none !important;
             content: none !important;
         }
-
-        /* fix input padding */
         input {
             padding-left: 16px !important;
             margin-right: 0 !important;
@@ -30,15 +22,13 @@
     }
 }
 
-/* Desktop */
 .media-width(@extremum, @break)
 when (@extremum = 'min') and (@break = @screen__m) {
     .block.newsletter {
         width: auto !important;
-        max-width: none !important; /* VERY IMPORTANT */
+        max-width: none !important;
     }
 }
-
 
 .block.newsletter-frame {
     width: 100%;
