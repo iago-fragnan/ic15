@@ -1,0 +1,122 @@
+/* ===========================
+   NEWSLETTER OVERRIDE
+   =========================== */
+
+& when (@media-common = true) {
+    .block.newsletter {
+        /* remove table layout */
+        .form.subscribe {
+            display: flex !important;
+            width: 100%;
+        }
+
+        .fieldset,
+        .actions {
+            display: block !important;
+            width: auto !important;
+        }
+
+        /* remove magento icon */
+        .control::before {
+            display: none !important;
+            content: none !important;
+        }
+
+        /* fix input padding */
+        input {
+            padding-left: 16px !important;
+            margin-right: 0 !important;
+        }
+    }
+}
+
+/* Desktop */
+.media-width(@extremum, @break)
+when (@extremum = 'min') and (@break = @screen__m) {
+    .block.newsletter {
+        width: auto !important;
+        max-width: none !important; /* VERY IMPORTANT */
+    }
+}
+
+
+.block.newsletter-frame {
+    width: 100%;
+
+    .newsletter-title {
+        text-align: center;
+        font-size: 32px;
+        font-weight: 700;
+        margin-bottom: 24px;
+
+        .highlight {
+            color: #005cff;
+        }
+    }
+
+    .newsletter-box {
+        width: 100%;
+        background: #f5f5f5;
+        border-radius: 12px;
+        box-sizing: border-box;
+    }
+
+    .newsletter-form {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center;
+        gap: 16px;
+        width: 100%;
+        margin: 0;
+    }
+
+    .field {
+        margin: 0;
+    }
+
+    input[type="text"],
+    input[type="email"] {
+        width: 280px;
+        height: 48px;
+        border-radius: 8px;
+        background: #fff;
+        border: none;
+        padding: 0 16px;
+        font-size: 14px;
+    }
+
+    .newsletter-privacy {
+        label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            color: #656565;
+
+            a {
+                text-decoration: underline;
+                color: inherit;
+            }
+        }
+    }
+
+    .actions {
+        margin-left: auto;
+
+        button {
+            height: 48px;
+            padding: 0 28px;
+            border-radius: 8px;
+            background: #005cff;
+            color: #fff;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+    }
+
+    .control::before,
+    .control::after {
+        display: none !important;
+        content: none !important;
+    }
+}

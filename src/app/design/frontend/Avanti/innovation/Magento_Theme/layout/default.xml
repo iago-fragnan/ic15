@@ -53,8 +53,8 @@
 
         <!-- Footer-->
 
-        <!-- Remove newsletter and default info -->
-        <referenceContainer name="form.subscribe" remove="true" />
+        <!-- Move newsletter and remove default info -->
+        <move element="form.subscribe" destination="content" after="cms.page"/>
         <referenceBlock name="footer_links" remove="true"/>
         <referenceBlock name="copyright" remove="true"/>
 

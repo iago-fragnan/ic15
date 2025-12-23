@@ -1,0 +1,73 @@
+<?php
+/** @var \Magento\Newsletter\Block\Subscribe $block */
+if (!$block->getButtonLockManager()) {
+    $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+    $block->setButtonLockManager(
+        $objectManager->get(\Magento\Framework\View\Element\ButtonLockManager::class)
+    );
+}
+/** @var $escaper \Magento\Framework\Escaper */
+?>
+<div class="block newsletter newsletter-frame">
+
+    <p class="newsletter-title">
+        <span><?= __('Register in our') ?></span>
+        <span class="highlight"><?= __('newsletter') ?></span>
+    </p>
+
+    <div class="newsletter-box">
+        <form class="form subscribe newsletter-form"
+              id="newsletter-validate-detail"
+              action="<?= $escaper->escapeUrl($block->getFormActionUrl()) ?>"
+              method="post"
+              novalidate
+              data-mage-init='{"validation":{"errorClass":"mage-error"}}'>
+
+            <div class="field newsletter-name">
+                <input type="text"
+                       name="name"
+                       placeholder="<?= __('Enter your name') ?>"
+                       data-validate="{required:true}" />
+            </div>
+
+            <div class="field newsletter-email">
+                <input type="email"
+                       name="email"
+                       placeholder="<?= __('Enter your email address') ?>"
+                       data-validate="{required:true,'validate-email':true}" />
+            </div>
+
+            <div class="field newsletter-privacy">
+                <input type="hidden" name="privacy" value="0"/>
+                <label>
+                    <input type="checkbox"
+                           name="privacy"
+                           value="1"
+                           data-validate="{required:true}" />
+                    <span>
+                        <?= __('I agree with the') ?>
+                        <a href="#"><?= __('Privacy Policy') ?></a>
+                    </span>
+                </label>
+            </div>
+
+            <div class="actions">
+                <button class="action primary">
+                    <span><?= __('Register') ?></span>
+                </button>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Customer/js/block-submit-on-send": {
+                "formId": "newsletter-validate-detail"
+            }
+        }
+    }
+</script>
