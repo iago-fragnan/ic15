@@ -21,14 +21,18 @@
         }
     }
 }
-
 .media-width(@extremum, @break)
-when (@extremum = 'min') and (@break = @screen__m) {
-    .block.newsletter {
-        width: auto !important;
-        max-width: none !important;
+when (@extremum = 'max') and (@break = @screen__m) {
+    body {
+        .block.newsletter-frame {
+            .newsletter-form {
+                flex-direction: column !important;
+                padding: 0 !important;
+            }
+        }
     }
 }
+
 
 .block.newsletter-frame {
     width: 100%;
@@ -47,17 +51,19 @@ when (@extremum = 'min') and (@break = @screen__m) {
     .newsletter-box {
         width: 100%;
         background: #f5f5f5;
+        padding: 14px;
         border-radius: 12px;
         box-sizing: border-box;
     }
 
     .newsletter-form {
-        display: flex !important;
-        flex-direction: row !important;
+        display: flex;
+        flex-direction: row;
         align-items: center;
         gap: 16px;
         width: 100%;
         margin: 0;
+        padding: 3rem 5rem 3rem 3rem;
     }
 
     .field {
@@ -101,6 +107,7 @@ when (@extremum = 'min') and (@break = @screen__m) {
             color: #fff;
             font-weight: 600;
             white-space: nowrap;
+            margin-right: 3rem;
         }
     }
 
