@@ -1,119 +1,123 @@
 & when (@media-common = true) {
     .block.newsletter {
         .form.subscribe {
-            display: flex !important;
-            width: 100%;
+            .lib-css(display, flex);
+            .lib-css(width, 100%);
         }
 
         .fieldset,
         .actions {
-            display: block !important;
-            width: auto !important;
+            .lib-css(display, block);
+            .lib-css(width, auto);
         }
 
-        .control::before {
-            display: none !important;
-            content: none !important;
+        .control::before,
+        .control::after {
+            .lib-css(display, none);
+            .lib-css(content, none);
         }
+
         input {
-            padding-left: 16px !important;
-            margin-right: 0 !important;
+            .lib-css(padding-left, 16px);
+            .lib-css(margin-right, 0);
         }
     }
 }
+
+.media-width(@extremum, @break)
+when (@extremum = 'min') and (@break = @screen__m) {
+    .block.newsletter {
+        .lib-css(max-width, none);
+        .lib-css(width, 100%);
+    }
+}
+
 .media-width(@extremum, @break)
 when (@extremum = 'max') and (@break = @screen__m) {
     body {
         .block.newsletter-frame {
             .newsletter-form {
-                flex-direction: column !important;
-                padding: 0 !important;
+                .lib-css(flex-direction, column);
+                .lib-css(padding, 0);
             }
         }
     }
 }
 
-
 .block.newsletter-frame {
-    width: 100%;
+    .lib-css(width, 100%);
 
     .newsletter-title {
-        text-align: center;
-        font-size: 32px;
-        font-weight: 700;
-        margin-bottom: 24px;
+        .lib-css(text-align, center);
+        .lib-css(font-size, 32px);
+        .lib-css(font-weight, 700);
+        .lib-css(margin-bottom, 24px);
 
         .highlight {
-            color: #005cff;
+            .lib-css(color, #005cff);
         }
     }
 
     .newsletter-box {
-        width: 100%;
-        background: #f5f5f5;
-        padding: 14px;
-        border-radius: 12px;
-        box-sizing: border-box;
+        .lib-css(width, 100%);
+        .lib-css(background, #f5f5f5);
+        .lib-css(padding, 14px);
+        .lib-css(border-radius, 12px);
+        .lib-css(box-sizing, border-box);
     }
 
     .newsletter-form {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 16px;
-        width: 100%;
-        margin: 0;
-        padding: 3rem 5rem 3rem 3rem;
+        .lib-css(display, flex);
+        .lib-css(flex-direction, row);
+        .lib-css(align-items, center);
+        .lib-css(gap, 16px);
+        .lib-css(width, 100%);
+        .lib-css(margin, 0);
+        .lib-css(padding, 3rem 5rem 3rem 3rem);
     }
 
     .field {
-        margin: 0;
+        .lib-css(margin, 0);
     }
 
     input[type="text"],
     input[type="email"] {
-        width: 280px;
-        height: 48px;
-        border-radius: 8px;
-        background: #fff;
-        border: none;
-        padding: 0 16px;
-        font-size: 14px;
+        .lib-css(width, 280px);
+        .lib-css(height, 48px);
+        .lib-css(border-radius, 8px);
+        .lib-css(background, #fff);
+        .lib-css(border, none);
+        .lib-css(padding, 0 16px);
+        .lib-css(font-size, 14px);
     }
 
     .newsletter-privacy {
         label {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 12px;
-            color: #656565;
+            .lib-css(display, flex);
+            .lib-css(align-items, center);
+            .lib-css(gap, 8px);
+            .lib-css(font-size, 12px);
+            .lib-css(color, #656565);
 
             a {
-                text-decoration: underline;
-                color: inherit;
+                .lib-css(text-decoration, underline);
+                .lib-css(color, inherit);
             }
         }
     }
 
     .actions {
-        margin-left: auto;
+        .lib-css(margin-left, auto);
 
         button {
-            height: 48px;
-            padding: 0 28px;
-            border-radius: 8px;
-            background: #005cff;
-            color: #fff;
-            font-weight: 600;
-            white-space: nowrap;
-            margin-right: 3rem;
+            .lib-css(height, 48px);
+            .lib-css(padding, 0 28px);
+            .lib-css(border-radius, 8px);
+            .lib-css(background, #005cff);
+            .lib-css(color, #fff);
+            .lib-css(font-weight, 600);
+            .lib-css(white-space, nowrap);
+            .lib-css(margin-right, 3rem);
         }
-    }
-
-    .control::before,
-    .control::after {
-        display: none !important;
-        content: none !important;
     }
 }
