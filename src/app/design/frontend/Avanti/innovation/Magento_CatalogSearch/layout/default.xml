@@ -2,6 +2,6 @@
       xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd"
       layout="1column">
     <body>
-        <referenceContainer name="div.sidebar.additional" remove="true"/>
+        <referenceContainer name="div.sidebar.additional" remove="false"/>
     </body>
 </page>

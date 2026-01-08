@@ -1,20 +1,14 @@
 <?php
-/**
-* Copyright © Magento, Inc. All rights reserved.
-* See COPYING.txt for license details.
-*/
 // @codingStandardsIgnoreFile
 /** @var \Magento\Catalog\Pricing\Render\FinalPriceBox $block */
 
 
-// Modelos de preço
 $priceModel = $block->getPriceType('regular_price');
 $finalPriceModel = $block->getPriceType('final_price');
 $idSuffix = $block->getIdSuffix() ?: '';
 $schema = ($block->getZone() == 'item_view');
 
 
-// === Cálculos ===
 $regularPrice = $priceModel->getAmount()->getValue();
 $finalPrice = $finalPriceModel->getAmount()->getValue();
 $discountPercent = 0;
@@ -25,18 +19,15 @@ if ($regularPrice > 0 && $finalPrice < $regularPrice) {
 }
 
 
-// Define o preço base para o parcelamento
 $parcelPriceBase = ($block->hasSpecialPrice() && $finalPrice < $regularPrice)
    ? $finalPrice
    : $regularPrice;
 
 
-// Valor e formatação da parcela (10x)
 $installments = 10;
 $installmentValue = $parcelPriceBase / $installments;
 
 
-// 🔹 Aqui usamos o PriceHelper nativo do Magento
 /** @var \Magento\Framework\Pricing\Helper\Data $priceHelper */
 $priceHelper = \Magento\Framework\App\ObjectManager::getInstance()
    ->get(\Magento\Framework\Pricing\Helper\Data::class);
@@ -59,7 +50,6 @@ $installmentFormatted = $priceHelper->currency($installmentValue, true, false);
            ]); ?>
        </span>
 
-       <!-- Wrapper for price + discount on same row -->
        <div class="price-with-discount">
            <span class="special-price">
                <?= /* @noEscape */ $block->renderAmount($finalPriceModel->getAmount(), [
@@ -85,7 +75,6 @@ $installmentFormatted = $priceHelper->currency($installmentValue, true, false);
        ]); ?>
    <?php endif; ?>
 
-   <!-- Texto de parcelamento -->
    <div class="installment-text">
        <?= __('Ou em até %1x de %2', $installments, $installmentFormatted); ?>
    </div>
