@@ -23,6 +23,7 @@
 
 // Header Page
 
+
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
     .navigation,
     .breadcrumbs,
@@ -208,6 +209,8 @@
     background-color: #005CFF;
     margin: -1rem 0 1rem -0.7rem;
     position: absolute;
+    left: 20px;
+    top: -2px;
 }
 
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
@@ -296,12 +299,14 @@
 
     .login-text{
         color: #000000;
-        font-weight: bold;
+        font-size: 14px;
+        font-weight: 600;
     }
 
     .register-text{
         color: #000000;
-        font-weight: bold;
+        font-size: 14px;
+        font-weight: 600;
     }
 
     .minicart-wrapper {

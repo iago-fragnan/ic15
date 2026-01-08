@@ -1,4 +1,3 @@
-
 #sorter{
     .lib-css(background-color, #FAFAFA);
     border-radius: 5px;
@@ -160,24 +159,7 @@
 
 }
 
-.lib-pager() {
-    .item {
-        background-color: #005CFF;
-        border-radius: 5rem;
-        padding: 5px 16px 5px 16px;
-        .label {
-            .lib-visually-hidden();
-            color: white;
-        }
-    }
-    strong.page {
-        .lib-css(color, white);
-    }
-    a.page {
-        .lib-css(color, white);
-    }
 
-}
 
 
 & when (@media-common = true) {
@@ -197,5 +179,79 @@
         }
 
     }
+    .pages {
+        .action {
+            .lib-css(box-shadow, none);
+            border-radius: 3px;
+            padding: 0 8px;
+
+            &.previous {
+                margin-right: 8px;
+            }
+
+            &.next {
+                box-shadow: none;
+                background: none;
+                background-color: transparent;
+                border: none;
+                color: white;
+                margin-left: 8px;
+            }
+        }
+
+    }
 }
+
+.pages-items {
+    .item.current {
+        .page {
+            height: auto;
+            width: 27px;
+            border-radius: 25px;
+            background-color: #005cff;
+            color: #fff;
+            font-weight: 600;
+            cursor: default;
+
+        }
+    }
+    .item:not(.current):not(.pages-item-next):not(.pages-item-previous) {
+        .page {
+            height: auto;
+            width: 27px;
+            border-radius: 25px;
+
+            background: transparent;
+            background-color: transparent;
+            color: #005cff;
+            transition: background .2s ease, color .2s ease;
+
+            &:hover {
+                background-color: #005cff;
+                color: white;
+            }
+        }
+    }
+    .pages-item-next {
+        .action.next {
+            background-color: #005cff;
+            color: white;
+            height: 32px;
+            width: 32px;
+            border-radius: 5px;
+
+            &:before {
+                color: #fff !important;
+            }
+
+            &:hover:before,
+            &:visited:before,
+            &:active:before {
+                color: grey !important;
+            }
+        }
+    }
+}
+
+
 

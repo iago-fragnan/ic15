@@ -1,0 +1,57 @@
+
+& when (@media-common = true) {
+
+    .nav-sections {
+        .lib-css(background, #FFFFFF);
+        .lib-css(box-shadow, 0 4px 8px rgba(0, 0, 0, 0.1));
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .navigation ul {
+        padding: 0 8px;
+        justify-self: center;
+    }
+}
+
+.lib-main-navigation-desktop(){
+    .navigation {
+        .lib-css(background, #FFFFFF);
+        height: inherit;
+        left: auto;
+        overflow: inherit;
+        padding: 0;
+        position: relative;
+        top: 0;
+        width: 100%;
+        z-index: 3;
+        color: #000000;
+        font-size: 14px;
+        font-weight: 400;
+        ul {
+            margin-top: 0;
+            margin-bottom: 0;
+            padding: 0;
+            position: relative;
+        }
+
+        li.level0 {
+            .lib-css(border-top, none);
+            margin: 0 4rem;
+        }
+        .level0{
+            &.active,
+            &.has-active {
+                > .level-top {
+                    .lib-css(border-color, #005CFF);
+                }
+            }
+            .submenu {
+                .active > a {
+                    .lib-css(border-color, #005CFF);
+                }
+            }
+        }
+    }
+
+}

@@ -1,22 +1,45 @@
-.product-item {
-    border: none !important;
-    box-shadow: none !important;
-
+.product-item-info {
     &:hover {
-        border: none !important;
         box-shadow: none !important;
     }
-
-    .product-item-info {
-        border: none !important;
-        box-shadow: none !important;
-
-        &:hover {
-            border: none !important;
-            box-shadow: none !important;
+}
+.product-item-actions{
+    .action{
+        .tocart{
+            .primary{
+                &:hover{
+                    box-shadow: none !important;
+                    border: none !important;
+                }
+            }
         }
     }
 }
+
+.products-grid {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .products-grid {
+        .product-item {
+            margin-left: 16px !important;
+            margin-right: 16px !important;
+            float: none;
+        }
+    }
+}
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .products-grid {
+        .product-item {
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+            float: none;
+        }
+    }
+}
+
 
 .product-item {
     .product-reviews-summary.short {
@@ -66,16 +89,14 @@
     }
 
     .product-item-info {
+        border-radius: 15px;
         .lib-css(margin-right, 13px);
         .lib-css(width, 242px);
-        .lib-css(min-height, 524px);
-        .lib-css(max-height, 524px);
         .lib-css(display, flex);
         .lib-css(flex-direction, column);
         .lib-css(overflow, hidden);
     }
 
-    .lib-css(line-height, 0, 1);
 }
 
 .product-item-photo {
@@ -273,7 +294,6 @@
 }
 
 .product-item-details {
-    .lib-css(padding, 0 12px);
     .lib-css(display, flex);
     .lib-css(flex-direction, column);
     .lib-css(gap, 4px);
@@ -282,7 +302,6 @@
 
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__s) {
     .products-grid .product-item-info:not(:hover):not(.active) .product-item-inner {
-        border: none !important;
         clip: initial !important;
         height: auto !important;
         margin: 0 !important;

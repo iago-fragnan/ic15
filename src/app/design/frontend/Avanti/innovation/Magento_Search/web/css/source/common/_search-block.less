@@ -1,17 +1,10 @@
 & when (@media-common =true) {
     .block.block-search {
         #search {
-            .lib-css(border, 1px solid black);
             .lib-css(border-radius, 10px);
             .lib-css(padding, 20px);
         }
 
-        #search::placeholder,
-        .input-text {
-            .lib-css(font-size, 14px);
-            .lib-css(color, #000);
-            .lib-css(font-weight, 600);
-        }
 
         .action.search {
             .lib-css(height, 100%);
@@ -97,4 +90,11 @@
             .lib-css(padding-right, 60px);
         }
     }
+}
+.search-autocomplete {
+    background-color: #fff;
+    border: 1px solid #dcdcdc;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .08);
 }
