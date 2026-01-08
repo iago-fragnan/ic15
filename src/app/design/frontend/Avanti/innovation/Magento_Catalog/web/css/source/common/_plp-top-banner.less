@@ -1,0 +1,32 @@
+// Top banner | Mobile Disable
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .plp-category-header {
+
+        .category-top-banner {
+            display: none;
+        }
+    }
+}
+
+
+
+.plp-category-header{
+    width: 100%;
+    .plp-category-title{
+        text-align: center;
+        height: 44px;
+        color: #000000;
+
+        .plp-category-title-text{
+            font-weight: 700;
+            font-size: 32px;
+        }
+    }
+    .category-top-banner{
+        display: flex;
+        justify-content: center;
+        img{
+            padding-bottom: 37px;
+        }
+    }
+}

@@ -1,0 +1,85 @@
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .search-error-container{
+        margin-bottom: 40px;
+        .msg-wrapper{
+            .error-text{
+                white-space: nowrap;
+                flex-direction: row;
+                color: #000000;
+                font-weight: 700;
+                font-size: 16px;
+                text-align: center;
+                .error-user-typed{
+                    color: #005CFF;
+                }
+            }
+            .suggestions{
+                flex-direction: column;
+                justify-self: center;
+                h1{
+                    font-size: 16px;
+                    margin-bottom: 10px;
+                }
+                suggestions-list {
+                    display: flex;
+                    flex-direction: column;
+                    color: #656565;
+                    font-weight: 400;
+                    font-size: 14px;
+                }
+            }
+        }
+
+    }
+}
+
+// Success product search
+.success-msg-container{
+    .msg-wrapper{
+        .text-title{
+            font-size: 20px;
+            color: #000000;
+            font-weight: 700;
+            .user-typed{
+                color: #005CFF;
+            }
+        }
+    }
+}
+
+
+// Error not found product search
+.search-error-container{
+    justify-items: center;
+    .msg-wrapper{
+        .error-text{
+            flex-direction: row;
+            color: #000000;
+            font-weight: 700;
+            font-size: 20px;
+            text-align: center;
+            .error-user-typed{
+                color: #005CFF;
+            }
+        }
+        .suggestions {
+            display: flex;
+            h1{
+                color: #000000;
+                font-size: 18px;
+                font-weight: 700;
+                margin-right: 30px;
+            }
+
+            .suggestions-list {
+                display: flex;
+                flex-direction: column;
+                color: #656565;
+                font-weight: 400;
+                font-size: 14px;
+            }
+        }
+
+    }
+
+}

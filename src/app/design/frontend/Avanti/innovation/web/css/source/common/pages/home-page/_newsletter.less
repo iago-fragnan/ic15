@@ -27,8 +27,13 @@
 .media-width(@extremum, @break)
 when (@extremum = 'min') and (@break = @screen__m) {
     .block.newsletter {
-        .lib-css(max-width, none);
         .lib-css(width, 100%);
+        // Removed max-width: none
+    }
+
+    // Add specific rule for newsletter-frame
+    .block.newsletter-frame {
+        .lib-css(max-width, 1200px);
     }
 }
 
@@ -46,6 +51,12 @@ when (@extremum = 'max') and (@break = @screen__m) {
 
 .block.newsletter-frame {
     .lib-css(width, 100%);
+    .lib-css(max-width, 1200px);
+    .lib-css(margin-left, auto);
+    .lib-css(margin-right, auto);
+    .lib-css(padding-left, 15px);
+    .lib-css(padding-right, 15px);
+    .lib-css(box-sizing, border-box);
 
     .newsletter-title {
         .lib-css(text-align, center);
@@ -73,7 +84,6 @@ when (@extremum = 'max') and (@break = @screen__m) {
         .lib-css(gap, 16px);
         .lib-css(width, 100%);
         .lib-css(margin, 0);
-        .lib-css(padding, 3rem 5rem 3rem 3rem);
     }
 
     .field {
@@ -89,6 +99,7 @@ when (@extremum = 'max') and (@break = @screen__m) {
         .lib-css(border, none);
         .lib-css(padding, 0 16px);
         .lib-css(font-size, 14px);
+        .lib-css(box-sizing, border-box);
     }
 
     .newsletter-privacy {
@@ -108,6 +119,7 @@ when (@extremum = 'max') and (@break = @screen__m) {
 
     .actions {
         .lib-css(margin-left, auto);
+        .lib-css(margin-right, 0);
 
         button {
             .lib-css(height, 48px);
@@ -117,7 +129,7 @@ when (@extremum = 'max') and (@break = @screen__m) {
             .lib-css(color, #fff);
             .lib-css(font-weight, 600);
             .lib-css(white-space, nowrap);
-            .lib-css(margin-right, 3rem);
+            .lib-css(margin, 0);
         }
     }
 }

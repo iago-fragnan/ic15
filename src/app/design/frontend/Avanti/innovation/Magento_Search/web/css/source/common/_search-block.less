@@ -1,0 +1,100 @@
+& when (@media-common =true) {
+    .block.block-search {
+        #search {
+            .lib-css(border, 1px solid black);
+            .lib-css(border-radius, 10px);
+            .lib-css(padding, 20px);
+        }
+
+        #search::placeholder,
+        .input-text {
+            .lib-css(font-size, 14px);
+            .lib-css(color, #000);
+            .lib-css(font-weight, 600);
+        }
+
+        .action.search {
+            .lib-css(height, 100%);
+            .lib-css(width, 30px);
+        }
+
+        .action.search::before {
+            .lib-css(content, """");
+            .lib-css(display, block);
+            .lib-css(width, 19px);
+            .lib-css(height, 19px);
+            .lib-css(background-image, url("@{baseDir}images/icons/icon-search.svg"));
+            .lib-css(background-repeat, no-repeat);
+            .lib-css(background-size, contain);
+            .lib-css(background-position, center);
+        }
+
+        .actions .action.search[disabled] {
+            .lib-css(opacity, 1);
+        }
+    }
+}
+
+.media-width(@extremum, @break)
+    when
+    (@extremum = "max")
+    and
+    (@break = @screen__m) {
+    .block.block-search {
+        .lib-css(margin, 0);
+        .lib-css(position, absolute);
+        .lib-css(right, -137px);
+        .lib-css(display, flex);
+        .lib-css(justify-content, center);
+        .lib-css(align-items, center);
+
+        .label::before {
+            .lib-css(margin, 0);
+        }
+
+        .control {
+            .lib-css(border, none);
+            .lib-css(top, 160%);
+            .lib-css(position, absolute);
+            .lib-css(transform, translateX(calc(-88.5vw + 48px)));
+        }
+
+        .form.minisearch .field.search .label::before {
+            .lib-css(content, " ");
+            .lib-css(display, flex);
+            .lib-css(width, 19px);
+            .lib-css(height, 19px);
+            .lib-css(background-image, url("@{baseDir}images/icons/icon-search.svg"));
+            .lib-css(background-repeat, no-repeat);
+            .lib-css(background-size, contain);
+            .lib-css(background-position, center);
+        }
+
+        .field.search .label {
+            .lib-css(height, 18px);
+            .lib-css(width, 18px);
+            .lib-css(transform, translateX(50%));
+        }
+
+        .field.search input[aria-expanded="true"] {
+            .lib-css(width, 92vw);
+            .lib-css(margin-top, 27px);
+        }
+    }
+}
+
+.media-width(@extremum, @break)
+    when
+    (@extremum ="min")
+    and
+    (@break =@screen__m) {
+    .block.block-search {
+        .lib-css(max-width, 592px);
+        .lib-css(flex, 1);
+        .lib-css(margin-right, calc(20% - 80px));
+
+        #search {
+            .lib-css(padding-right, 60px);
+        }
+    }
+}

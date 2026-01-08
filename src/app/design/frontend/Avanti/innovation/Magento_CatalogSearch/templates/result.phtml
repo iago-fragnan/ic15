@@ -1,0 +1,36 @@
+<?php
+use Magento\CatalogSearch\Block\Result;
+/** @var $block  Result*/
+$productList = $block->getProductListHtml();
+?>
+    <?php if ($results = $block->getResultCount()) : ?>
+        <div class="search found">
+            <?php if ($results >= 1) : ?>
+                <div class="success-msg-container">
+                    <div class="msg-wrapper">
+                        <h1 class="text-title"><?= __("Search results for"); ?> <span class="user-typed">"<?= htmlspecialchars($_GET['q'])?>"</span></h1>
+                    </div>
+                </div>
+            <?php endif; ?>
+        </div>
+    <?php else : ?>
+        <div class="search-error-container">
+            <div class="msg-wrapper">
+                <h1 class="error-text"><?= __("We found no results for"); ?> <span class="error-user-typed">"<?= htmlspecialchars($_GET['q']); ?>"</span></h1>
+                <div class="suggestions">
+                    <h1 class="suggestions-header"><?= __("What should i do?"); ?></h1>
+                    <div class="suggestions-list">
+                        <span>- <?= __("Check the terms you entered"); ?>.</span>
+                        <span>- <?= __("Use synonyms for the desired term"); ?>.</span>
+                        <span>- <?= __("Try using a single word"); ?>.</span>
+                        <span>- <?= __("Use generic terms in the search"); ?>.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <?php endif; ?>
+
+    <?php $searchCriterias = $block->getSearchCriterias(); ?>
+    <?php if ($block->getResultCount()) : ?>
+        <div class="search results"><?= /* @noEscape */ $productList ?></div>
+    <?php endif; ?>

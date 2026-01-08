@@ -1,0 +1,25 @@
+<?php
+/** @var \Magento\Framework\Registry $registry */
+$registry = \Magento\Framework\App\ObjectManager::getInstance()
+    ->get(\Magento\Framework\Registry::class);
+
+$category = $registry->registry('current_category');
+?>
+
+<div class="plp-category-header">
+    <div class="plp-category-title">
+        <h1 class="plp-category-title-text">
+            <?= $category ? $category->getName() : '' ?>
+        </h1>
+    </div>
+
+    <div class="category-top-banner">
+        <a href="google.com" target="_blank">
+            <img
+                src="<?= $block->getViewFileUrl('images/category-top-banner.png') ?>"
+                alt="<?= $category ? $category->getName() : 'Category banner' ?>"
+                loading="lazy"
+            />
+        </a>
+    </div>
+</div>

@@ -1,0 +1,73 @@
+& when (@media-common =true) {
+    .minicart-wrapper .action.showcart {
+        &::before,
+        &.active::before,
+        &:hover::before,
+        &.open::before {
+            .lib-css(content, "");
+            .lib-css(display, none);
+            .lib-css(background, none);
+            .lib-css(width, 0);
+            .lib-css(height, 0);
+        }
+    }
+    .action.showcart {
+        .lib-css(width, 24px);
+        .lib-css(height, 24px);
+
+        .counter.qty:not(.empty) {
+            .lib-css(position, absolute);
+            .lib-css(top, -14px);
+            .lib-css(right, -10px);
+            .lib-css(border-radius, 50%);
+            .lib-css(display, flex);
+            .lib-css(align-items, center);
+            .lib-css(justify-content, center);
+            .lib-css(font-size, 12px);
+        }
+
+        // Ícone do carrinho
+        &::after {
+            .lib-css(content, """");
+            .lib-css(display, block);
+            .lib-css(width, 24px);
+            .lib-css(height, 24px);
+            .lib-css(background-repeat, no-repeat);
+            .lib-css(background-size, contain);
+            .lib-css(background-position, center);
+        }
+    }
+}
+
+.media-width(@extremum, @break)
+when
+    (@extremum = "max")
+    and
+    (@break = @screen__m) {
+    .minicart-wrapper {
+        .lib-css(display, flex);
+        .lib-css(left, 50%);
+        .lib-css(transform, translateX(-70%));
+        .lib-css(justify-content, center);
+        .lib-css(align-items, center);
+        .lib-css(margin, 0);
+
+        .action.showcart {
+            &::after {
+                .lib-css(background-image, url("@{baseDir}images/icons/icon-cart.svg"));
+            }
+        }
+    }
+}
+
+.media-width(@extremum, @break)
+when
+    (@extremum ="min")
+    and
+    (@break =@screen__m) {
+    .action.showcart {
+        &::after {
+            .lib-css(background-image, url("@{baseDir}images/icons/icon-cart.svg"));
+        }
+    }
+}
