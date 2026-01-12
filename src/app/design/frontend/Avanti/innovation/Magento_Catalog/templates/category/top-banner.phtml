@@ -4,22 +4,44 @@ $registry = \Magento\Framework\App\ObjectManager::getInstance()
     ->get(\Magento\Framework\Registry::class);
 
 $category = $registry->registry('current_category');
+
+/** @var \Magento\Store\Model\StoreManagerInterface $storeManager */
+$storeManager = \Magento\Framework\App\ObjectManager::getInstance()
+    ->get(\Magento\Store\Model\StoreManagerInterface::class);
+
+$mediaUrl = $storeManager->getStore()->getBaseUrl(
+    \Magento\Framework\UrlInterface::URL_TYPE_MEDIA
+);
+
+$categoryImage = null;
+
+if ($category && $category->getImage()) {
+    $image = ltrim($category->getImage(), '/');
+
+    // Remove duplicated media path if present
+    $image = preg_replace('#^media/catalog/category/#', '', $image);
+
+    $categoryImage = $mediaUrl . 'catalog/category/' . $image;
+}
 ?>
 
+
 <div class="plp-category-header">
-    <div class="plp-category-title">
-        <h1 class="plp-category-title-text">
+    <div class="category-title">
+        <h1 class="text">
             <?= $category ? $category->getName() : '' ?>
         </h1>
     </div>
 
-    <div class="category-top-banner">
-        <a href="google.com" target="_blank">
+    <?php if ($categoryImage): ?>
+        <div class="top-banner">
             <img
-                src="<?= $block->getViewFileUrl('images/category-top-banner.png') ?>"
-                alt="<?= $category ? $category->getName() : 'Category banner' ?>"
+                class="banner-image"
+                src="<?= $block->escapeUrl($categoryImage) ?>"
+                alt="<?= $block->escapeHtmlAttr($category->getName()) ?>"
                 loading="lazy"
             />
-        </a>
-    </div>
+        </div>
+    <?php endif; ?>
+
 </div>

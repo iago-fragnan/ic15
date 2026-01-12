@@ -1,8 +1,5 @@
 @icon-path: '@{baseDir}images/icons/';
 
-// USAGE:
-// .lib-theme-icon-svg('ICON.svg', SIZE, POSITION, COLOR, ROTATION);
-
 .lib-theme-icon-svg(
     @file,
     @size: 16px,
@@ -19,12 +16,18 @@
 
         -webkit-mask: url('@{icon-path}@{file}') no-repeat center;
         mask: url('@{icon-path}@{file}') no-repeat center;
-
         -webkit-mask-size: contain;
         mask-size: contain;
 
         transform: rotate(@rotate);
         font-family: none;
+
+        transition:
+            background-color 0.25s ease,
+            transform 0.25s ease,
+            opacity 0.25s ease;
+
+        will-change: transform, background-color;
     }
 }
 
@@ -44,11 +47,17 @@
 
         -webkit-mask: url('@{icon-path}@{file}') no-repeat center;
         mask: url('@{icon-path}@{file}') no-repeat center;
-
         -webkit-mask-size: contain;
         mask-size: contain;
 
         transform: rotate(@rotate);
         font-family: none;
+
+        transition:
+            background-color 0.25s ease,
+            transform 0.25s ease,
+            opacity 0.25s ease;
+
+        will-change: transform, background-color;
     }
 }

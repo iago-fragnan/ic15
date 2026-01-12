@@ -132,11 +132,19 @@
 
             &.sort-asc {
                 .lib-theme-icon-svg('icon-arrow-up.svg', 24px, before, #787878, 0deg);
-            }
 
+                &:hover {
+                    .lib-theme-icon-svg('icon-arrow-up.svg', 24px, before, #005CFF, 0deg);
+                }
+            }
             &.sort-desc {
                 .lib-theme-icon-svg('icon-arrow-up.svg', 24px, before, #787878, 180deg);
+
+                &:hover {
+                    .lib-theme-icon-svg('icon-arrow-up.svg', 24px, before, #005CFF, 180deg);
+                }
             }
+
         }
 
         &-products {

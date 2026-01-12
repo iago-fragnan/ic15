@@ -7,9 +7,8 @@
 -->
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
-        <referenceBlock name="breadcrumbs" remove="true"/>
-        <move element="product_list_toolbar"
-              destination="category.products.list" after="-"/>
+        <referenceBlock name="breadcrumbs" remove="false"/>
+        <move element="product_list_toolbar" destination="category.products.list" after="-"/>
         <referenceContainer name="columns.top" remove="true" />
     </body>
 </page>

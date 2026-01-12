@@ -17,7 +17,7 @@
 
         .counter.qty:not(.empty) {
             .lib-css(position, absolute);
-            .lib-css(top, -14px);
+            .lib-css(top, 0);
             .lib-css(right, -10px);
             .lib-css(border-radius, 50%);
             .lib-css(display, flex);
@@ -39,11 +39,7 @@
     }
 }
 
-.media-width(@extremum, @break)
-when
-    (@extremum = "max")
-    and
-    (@break = @screen__m) {
+.media-width(@extremum, @break) when (@extremum = "max") and (@break = @screen__m) {
     .minicart-wrapper {
         .lib-css(display, flex);
         .lib-css(left, 50%);
@@ -60,11 +56,7 @@ when
     }
 }
 
-.media-width(@extremum, @break)
-when
-    (@extremum ="min")
-    and
-    (@break =@screen__m) {
+.media-width(@extremum, @break) when (@extremum ="min") and (@break =@screen__m) {
     .action.showcart {
         &::after {
             .lib-css(background-image, url("@{baseDir}images/icons/icon-cart.svg"));

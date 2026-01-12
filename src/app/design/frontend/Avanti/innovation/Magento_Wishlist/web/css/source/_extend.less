@@ -1,0 +1,42 @@
+// /**
+//  * Copyright © Magento, Inc. All rights reserved.
+//  * See COPYING.txt for license details.
+//  */
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+    .product-social-links,
+    .block-bundle-summary,
+    .product-item,
+    .table-comparison {
+        .action.towishlist {
+            &:extend(.abs-actions-addto all);
+            .lib-theme-icon-svg('icon-heart.svg', 16px, before, #005CFF);
+        }
+        .action.towishlist:hover {
+            &:extend(.abs-actions-addto all);
+            .lib-theme-icon-svg('icon-heart.svg', 16px, before, #083ca0);
+        }
+    }
+}
+
+
+.page-products {
+    .product-item-info {
+        position: relative;
+
+        .product-item-actions {
+            .actions-secondary{
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                z-index: 10;
+            }
+
+        }
+    }
+}
+

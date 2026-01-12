@@ -2,7 +2,7 @@
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
     .plp-category-header {
 
-        .category-top-banner {
+        .top-banner {
             display: none;
         }
     }
@@ -12,21 +12,26 @@
 
 .plp-category-header{
     width: 100%;
-    .plp-category-title{
+    .category-title{
         text-align: center;
         height: 44px;
         color: #000000;
 
-        .plp-category-title-text{
+        .text{
             font-weight: 700;
             font-size: 32px;
         }
     }
-    .category-top-banner{
+    .top-banner{
         display: flex;
         justify-content: center;
-        img{
+        border-radius: 8px;
+        .banner-image{
+            width: 1259px;
+            height: 200px;
             padding-bottom: 37px;
+            border-radius: 8px;
+            object-fit: cover;
         }
     }
 }
