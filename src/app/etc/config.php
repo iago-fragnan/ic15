@@ -379,6 +379,7 @@ return [
         'Magento_WishlistSampleData' => 1,
         'Avanti_BackToTop' => 1,
         'Avanti_NewsletterExtend' => 1,
+        'Avanti_ShippingEstimator' => 1,
         'MSP_Common' => 1,
         'MSP_DevTools' => 1,
         'MarkShust_DisableTwoFactorAuth' => 1,

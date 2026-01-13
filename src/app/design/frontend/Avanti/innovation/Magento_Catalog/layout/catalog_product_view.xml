@@ -17,5 +17,8 @@
               destination="product.info.main"
               before="product.info.price"/>
 
+        <move element="form.subscribe" destination="catalog.product.related" before="footer_row_1"/>
+
+
     </body>
 </page>

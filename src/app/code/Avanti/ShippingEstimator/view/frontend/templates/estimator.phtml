@@ -1,0 +1,28 @@
+<?php
+/** @var \Magento\Framework\Escaper $escaper */
+$ajaxUrl = $block->getUrl('avanti-estimator/ajax/estimate');
+?>
+<div class="shipping-estimator" data-estimator='{"ajaxUrl":"<?= $escaper->escapeUrl($ajaxUrl) ?>"}'>
+    <strong><?= $escaper->escapeHtml(__('Calculate shipping')) ?>:</strong>
+
+    <div class="field">
+        <label class="label-input"><?= $escaper->escapeHtml(__('ZIP/CEP')) ?></label>
+        <input type="text" class="input-text cep" placeholder="<?= __("Enter your ZIP code") ?>" />
+        <button type="button" class="action primary estimate">
+            <span><?= $escaper->escapeHtml(__('Estimate')) ?></span>
+        </button>
+    </div>
+
+
+
+    <div class="results" style="margin-top:10px;"></div>
+</div>
+
+
+<script type="text/x-magento-init">
+    {
+        ".shipping-estimator": {
+            "Avanti_ShippingEstimator/js/estimator": {}
+        }
+    }
+</script>

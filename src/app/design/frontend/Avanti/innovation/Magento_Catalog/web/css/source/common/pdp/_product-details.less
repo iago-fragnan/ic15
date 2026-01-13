@@ -87,17 +87,23 @@
     .product-social-links{
         text-align: start;
     }
-    .product-share{
-        button{
+    .product-share {
+        button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
             .lib-theme-icon-svg('icon-share.svg', 26px, before, white, 0deg);
             width: 202px;
             height: 35px;
             border-radius: 10px;
             background-color: #535353;
             color: white;
-
+            padding: 16px;
         }
+        margin-bottom: 24px;
     }
+
 
 }
 
@@ -125,3 +131,86 @@
         }
     }
 }
+
+.shipping-estimator{
+    .field{
+        display: flex;
+        gap: 5px;
+        .label-input{
+            display: none;
+        }
+        .input-text.cep{
+            width: 248px;
+            height: 40px;
+            border-radius: 8px;
+            border: 1px solid #DDDDDD;
+        }
+        .action.primary.estimate{
+            width: 102px;
+            height: 40px;
+            border-radius: 8px;
+            border: 1px solid #005CFF;
+            background-color: transparent;
+            span{
+                color: #005CFF;
+            }
+        }
+    }
+}
+
+.product-details-columns{
+    .title-header{
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 100%;
+        letter-spacing: 0;
+        margin: 32px 0 0 0;
+    }
+    .product-details-columns__col.product-details-columns__col--right{
+        .table-wrapper{
+            border-top: none;
+        }
+    }
+}
+
+    .additional-attributes-wrapper {
+        .data.table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #fff;
+            border-radius: 6px;
+            overflow: hidden;
+
+            caption {
+                text-align: left;
+                font-weight: 600;
+                font-size: 16px;
+                padding: 12px 16px;
+                background: #f5f5f5;
+                border-bottom: 1px solid #e0e0e0;
+            }
+
+            th,
+            td {
+                padding: 12px 16px;
+                border-bottom: 1px solid #eee;
+                vertical-align: middle;
+            }
+
+            th {
+                width: 30%;
+                font-weight: 600;
+                color: #333;
+                background-color: #fafafa;
+            }
+
+            td {
+                color: #555;
+            }
+
+            tbody tr:nth-child(even) {
+                background-color: #fcfcfc;
+            }
+        }
+    }
+
