@@ -15,7 +15,7 @@ $customer = $session->getCustomer();
 
     <?php if ($isLoggedIn): ?>
         <a href="<?= $block->getUrl('customer/account') ?>">
-            <?= __('Bem-vindo, '. $customer->getFirstname() . '!'); ?>
+            <?= __('Bem-vindo, '. $customer->getName() . '!'); ?>
         </a>
         <a href="<?= $block->getUrl('customer/account/logout') ?>">
             <?= __('Sair') ?>

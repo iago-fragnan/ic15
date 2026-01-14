@@ -21,9 +21,15 @@
 "Calculate shipping", "Frete e prazo de entrega"
 "Estimate", "Calcular"
 "Enter your ZIP code", "Digite seu CEP"
-
 "details", "Detalhes"
 "More information", "Mais informações"
+"Forgot my ZIP code", "Não sei meu CEP"
+"Product and postcode are required.", "Produto e CEP são obrigatórios."
+"Error estimating shipping: ", "Erro ao calcular o frete: "
+"SKU","Cód"
+"SKU:","Cód:"
+"SKU#:","Cód:"
+
 
 
 "Activity","Atividade"

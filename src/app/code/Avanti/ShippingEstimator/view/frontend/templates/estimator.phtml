@@ -3,7 +3,7 @@
 $ajaxUrl = $block->getUrl('avanti-estimator/ajax/estimate');
 ?>
 <div class="shipping-estimator" data-estimator='{"ajaxUrl":"<?= $escaper->escapeUrl($ajaxUrl) ?>"}'>
-    <strong><?= $escaper->escapeHtml(__('Calculate shipping')) ?>:</strong>
+    <strong class="title-text"><?= $escaper->escapeHtml(__('Calculate shipping')) ?>:</strong>
 
     <div class="field">
         <label class="label-input"><?= $escaper->escapeHtml(__('ZIP/CEP')) ?></label>
@@ -11,8 +11,9 @@ $ajaxUrl = $block->getUrl('avanti-estimator/ajax/estimate');
         <button type="button" class="action primary estimate">
             <span><?= $escaper->escapeHtml(__('Estimate')) ?></span>
         </button>
-    </div>
 
+    </div>
+    <a class="shipping-help" target="_blank" href="https://buscacepinter.correios.com.br/app/endereco/index.php"><?= __('Forgot my ZIP code'); ?></a>
 
 
     <div class="results" style="margin-top:10px;"></div>

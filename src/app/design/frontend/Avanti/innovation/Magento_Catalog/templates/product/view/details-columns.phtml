@@ -1,14 +1,15 @@
-<?php
-/** @var \Magento\Catalog\Block\Product\View\Details $block */
-?>
+<div class="product-details-columns-wrapper">
 <div class="product-details-columns">
-    <h1 class="title-header"><?= __('details') ?></h1>
+
     <div class="product-details-columns__col product-details-columns__col--left">
+        <h1 class="title-header"><?= __('Details') ?></h1>
         <?= $block->getChildHtml('description') ?>
     </div>
 
-    <h1 class="title-header"><?= __('More information') ?></h1>
+
     <div class="product-details-columns__col product-details-columns__col--right">
+        <h1 class="title-header"><?= __('More information') ?></h1>
         <?= $block->getChildHtml('additional') ?>
     </div>
+</div>
 </div>
