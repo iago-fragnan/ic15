@@ -1,0 +1,100 @@
+& when (@media-common = true) {
+    .minicart-wrapper {
+        .block-minicart {
+            padding: 0;
+        }
+    }
+    .block-minicart {
+        .subtotal {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .label {
+                font-size: 14px;
+                color: #000;
+                font-weight: 400;
+                line-height: 22px;
+                &:extend(.abs-colon all);
+            }
+
+            .amount {
+                .price-wrapper {
+                    .price {
+                        color: #000;
+                        font-weight: 400;
+                        font-size: 14px;
+                        line-height: 22px;
+                        text-align: right;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.block-content {
+
+    .minicart-header {
+        background-color: #005CFF;
+        min-height: 50px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        position: relative;
+
+        .title {
+            margin: 0;
+            padding: 0;
+            line-height: 1;
+            font-size: 14px;
+            font-weight: 700;
+            color: #FFFFFF;
+            display: flex;
+            align-items: center;
+        }
+
+        #btn-minicart-close {
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+
+            &::before {
+                line-height: 1;
+            }
+            .lib-theme-icon-svg('icon-cross.svg', 16px, before, #FFFFFF, 0deg);
+        }
+    }
+
+    .actions{
+        .primary{
+            #top-cart-btn-checkout{
+                background-color: #005CFF;
+                border-radius: 8px;
+                height: 48px;
+                font-size: 16px;
+                font-weight: 700;
+                color: #FFFFFF;
+                width: 100%;
+            }
+        }
+
+    }
+    .actions{
+        .secondary{
+            text-align: center;
+            margin: 12px 0 0 0;
+            .action.viewcart{
+                font-size: 16px;
+                font-weight: 700;
+                color: #005CFF;
+            }
+        }
+    }
+    .minicart-bottom-info{
+        padding: 15px;
+    }
+}
